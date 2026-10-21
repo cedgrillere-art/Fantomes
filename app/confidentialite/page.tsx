@@ -36,8 +36,9 @@ export default function Confidentialite() {
           exécution du contrat.
         </li>
         <li>
-          <strong>Ton adresse e-mail</strong> : pour t'envoyer ton lien de
-          connexion et ta facture. Base légale : exécution du contrat.
+          <strong>Ton adresse e-mail</strong>, saisie au moment du paiement :
+          pour ta facture et pour te répondre en cas de besoin. Base légale :
+          exécution du contrat.
         </li>
         <li>
           <strong>Les données de paiement</strong> : traitées uniquement par

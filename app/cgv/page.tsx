@@ -32,9 +32,10 @@ export default function CGV() {
           de résiliation.
         </li>
         <li>
-          <strong>Veille</strong> : 4 € TTC par mois, sans engagement. Permet de
-          déposer un nouveau relevé chaque mois pour repérer les nouveaux
-          prélèvements.
+          <strong>Audit + Veille</strong> : 19 € TTC le jour de l'achat, puis
+          4 € TTC par mois à partir du mois suivant, sans engagement. Comprend
+          l'audit complet et permet de déposer un nouveau relevé chaque mois pour
+          ajouter les nouveaux prélèvements à sa liste.
         </li>
       </ul>
       <p>{editeur.tva}</p>
@@ -47,8 +48,9 @@ export default function CGV() {
 
       <h2>4. Accès au service</h2>
       <p>
-        L'accès s'ouvre immédiatement après la confirmation du paiement. Un lien
-        de connexion est envoyé par e-mail pour revenir plus tard.
+        L'accès s'ouvre immédiatement après la confirmation du paiement. Une
+        adresse personnelle, affichée à ce moment-là, permet de revenir à sa liste
+        plus tard ; elle doit être conservée et ne pas être partagée.
       </p>
 
       <h2>5. Garantie satisfait ou remboursé</h2>
@@ -68,8 +70,9 @@ export default function CGV() {
       <h2>6. Résiliation de la Veille</h2>
       <p>
         La Veille est sans engagement et résiliable à tout moment, en un clic
-        depuis ton espace ou par e-mail à {editeur.email}. La résiliation prend
-        effet à la fin du mois en cours ; aucun prélèvement n'a lieu ensuite.
+        depuis ta liste (bouton « Résilier la Veille ») ou par e-mail à{" "}
+        {editeur.email}. La résiliation prend effet à la fin du mois en cours ;
+        aucun prélèvement n'a lieu ensuite.
       </p>
 
       <h2>7. Responsabilité</h2>

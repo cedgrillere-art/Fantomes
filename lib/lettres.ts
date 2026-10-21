@@ -43,7 +43,7 @@ export function lettreResiliation(f: Fantome, aujourdhui = new Date()): string {
   const corps =
     f.categorie === "banque"
       ? `Je constate le prélèvement de ${euros(f.montant)} ${FREQ_TEXTE[f.frequence]} au titre de mon offre. Je vous demande de basculer mon compte sur votre offre sans frais, à compter de la réception de ce message, et de cesser ces prélèvements.`
-      : `Je vous informe de ma décision de résilier mon abonnement ${f.nom}, prélevé ${FREQ_TEXTE[f.frequence]} (${euros(f.montant)}, dernier prélèvement le ${dateFr(f.dernierPrelevement)}).
+      : `Je vous informe de ma décision de résilier mon abonnement ${f.nom}, prélevé ${FREQ_TEXTE[f.frequence]} (${euros(f.montant)}${f.dernierPrelevement ? `, dernier prélèvement le ${dateFr(f.dernierPrelevement)}` : ""}).
 
 Je vous remercie de mettre fin à ce contrat à la prochaine échéance, de cesser tout prélèvement à compter de cette date et de m'adresser une confirmation écrite de la résiliation.`;
 

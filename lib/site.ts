@@ -39,3 +39,8 @@ export const supabasePublic = {
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
     "sb_publishable_pJ_rPNhfX36JTDMvgP4ihQ_8rNLA4I6",
 };
+
+// Stripe : clé PUBLIABLE (faite pour le navigateur). La clé secrète reste sur le serveur.
+export const stripePublic = {
+  cle: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? "",
+};
