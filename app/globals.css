@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-papier: #f5f0e6;
+  --color-carte: #fbf8f2;
+  --color-encre: #1c1b19;
+  --color-gris: #6b655b;
+  --color-trait: #ddd4c4;
+  --color-vermillon: #c23b22;
+  --color-sauge: #2f6b4f;
+  --font-titre: var(--font-fraunces), Georgia, serif;
+  --font-texte: var(--font-atkinson), system-ui, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-papier);
+  color: var(--color-encre);
+  font-family: var(--font-texte);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+}
+
+.chiffres {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Bouton principal : même style partout */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  width: 100%;
+  padding: 0 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--color-vermillon);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: transform 0.1s ease;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus-visible,
+.choix:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-encre);
+  outline-offset: 3px;
+}
+
+/* Ligne façon relevé bancaire */
+.releve {
+  border-top: 1px dashed var(--color-trait);
+}
+
+.prose-legale h2 {
+  font-family: var(--font-titre);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.prose-legale p,
+.prose-legale li {
+  margin-bottom: 0.75rem;
+}
+.prose-legale ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prose-legale a {
+  text-decoration: underline;
+}
