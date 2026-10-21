@@ -252,7 +252,7 @@ function Resultat({ fantomes, nbOperations }: { fantomes: Fantome[]; nbOperation
                   </span>
                   <span className="sr-only">Abonnement verrouillé</span>
                   <span className="text-sm text-gris">
-                    {euros(f.montant)} {FREQ[f.frequence]}
+                    {euros(f.montant, 2)} {FREQ[f.frequence]}
                   </span>
                 </span>
                 <span className="chiffres shrink-0 font-titre text-lg font-semibold">
@@ -306,7 +306,7 @@ function CarteOuverte({ f }: { f: Fantome }) {
         <div className="min-w-0">
           <p className="text-lg font-bold">{f.nom}</p>
           <p className="text-gris">
-            {euros(f.montant)} {FREQ[f.frequence]}
+            {euros(f.montant, 2)} {FREQ[f.frequence]}
           </p>
         </div>
         <p className="chiffres shrink-0 text-right font-titre text-2xl font-semibold text-vermillon">
