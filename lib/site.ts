@@ -10,7 +10,7 @@ export const site = {
     process.env.NEXT_PUBLIC_SITE_URL ??
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000"),
+      : "https://fantomes-jet.vercel.app"),
 };
 
 export const editeur = {
@@ -28,4 +28,14 @@ export const editeur = {
 export const garantie = {
   jours: 30,
   delaiLancement: "48 heures ouvrées",
+};
+
+// Supabase : adresse et clé PUBLIQUE (faites pour être visibles dans le navigateur,
+// l'accès aux données est protégé par les règles RLS de la base).
+// La clé SECRÈTE, elle, ne sera jamais ici : elle ira dans les variables Vercel.
+export const supabasePublic = {
+  url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://cfwtpldyeooqddhwqjhz.supabase.co",
+  cle:
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+    "sb_publishable_pJ_rPNhfX36JTDMvgP4ihQ_8rNLA4I6",
 };
