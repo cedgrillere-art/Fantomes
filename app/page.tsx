@@ -35,7 +35,7 @@ function BoutonCommencer() {
         Commencer, c'est gratuit
       </Link>
       <p className="mt-3 text-center text-sm text-gris">
-        2 minutes · Ton relevé reste sur ton téléphone
+        2 minutes · Sans connecter ta banque
       </p>
     </div>
   );
@@ -54,8 +54,9 @@ export default function Accueil() {
           {site.promesse}
         </h1>
         <p className="mt-5 text-lg text-gris">
-          Dépose ton relevé. Fantômes repère les prélèvements qui tournent en
-          silence et te prépare la lettre pour les arrêter.
+          Sans connecter ta banque : dépose ton relevé, Fantômes repère les
+          prélèvements qui tournent en silence et te prépare la lettre pour les
+          arrêter.
         </p>
         <div className="mt-7">
           <BoutonCommencer />
