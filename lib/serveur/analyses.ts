@@ -73,11 +73,12 @@ export async function creerAnalyse(prelevements: PrelevementValide[], reponses: 
 }
 
 export async function lireAnalyse(cle: string) {
-  const { data } = await supabaseAdmin()
+  const { data, error } = await supabaseAdmin()
     .from("analyses")
     .select("id, payee, formule, email")
     .eq("cle_acces", cle)
     .maybeSingle();
+  if (error) throw new Error(`Supabase : ${error.message}`); // ex. clé secrète invalide
   return data as { id: string; payee: boolean; formule: "audit" | "veille" | null; email: string | null } | null;
 }
 
