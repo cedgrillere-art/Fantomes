@@ -6,7 +6,7 @@ import "server-only";
 const API = "https://api.stripe.com/v1";
 
 function cle(): string {
-  const k = process.env.STRIPE_SECRET_KEY;
+  const k = process.env.STRIPE_SECRET_KEY?.trim();
   if (!k) throw new Error("STRIPE_SECRET_KEY manquante");
   return k;
 }
