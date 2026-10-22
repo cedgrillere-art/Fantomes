@@ -13,7 +13,9 @@ import { editeur, garantie, stripePublic } from "@/lib/site";
 
 type Formule = "audit" | "veille";
 
-const stripePromise = stripePublic.cle ? loadStripe(stripePublic.cle) : null;
+const stripePromise = /^pk_(test|live)_[A-Za-z0-9]+$/.test(stripePublic.cle)
+  ? loadStripe(stripePublic.cle).catch(() => null)
+  : null;
 
 function lireResultat(): { fantomes: Fantome[]; reponses: unknown } | null {
   try {
@@ -59,6 +61,10 @@ export default function Offre() {
   const [formule, setFormule] = useState<Formule>("audit");
 
   useEffect(() => {
+    // Si Stripe ne se charge pas (clé publique invalide, réseau), on l'affiche au lieu d'un bloc vide.
+    stripePromise?.then((s) => {
+      if (!s) setErreur("Le formulaire de paiement n'a pas pu se charger. Réessaie dans un instant.");
+    });
     const d = lireResultat();
     setDonnees(d);
     if (!d) return;
