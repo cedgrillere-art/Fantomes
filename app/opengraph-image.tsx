@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Fantômes — Débusque les abonnements que tu paies sans t'en servir.";
+export const alt = "Fantômes — Débusque les abonnements qu'on paie sans s'en servir.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function Image() {
       >
         <div style={{ fontSize: 40, fontWeight: 700, display: "flex" }}>Fantômes</div>
         <div style={{ fontSize: 76, lineHeight: 1.08, fontWeight: 700, display: "flex" }}>
-          Débusque les abonnements que tu paies sans t'en servir.
+          Débusque les abonnements qu'on paie sans s'en servir.
         </div>
         <div
           style={{

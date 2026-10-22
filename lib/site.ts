@@ -3,7 +3,7 @@
 
 export const site = {
   nom: "Fantômes",
-  promesse: "Débusque les abonnements que tu paies sans t'en servir.",
+  promesse: "Débusque les abonnements qu'on paie sans s'en servir.",
   description:
     "Dépose ton relevé : Fantômes repère les prélèvements qui tournent en silence, les classe par coût annuel et te prépare la lettre pour les arrêter.",
   url:
