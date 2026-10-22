@@ -41,6 +41,8 @@ export const supabasePublic = {
 };
 
 // Stripe : clé PUBLIABLE (faite pour le navigateur). La clé secrète reste sur le serveur.
+// Clé du compte Stripe « New business » (environnement de test). Elle est publique par nature.
+// Fixée ici pour ne pas dépendre d'un copier-coller ; à remplacer par la clé pk_live_ au passage en production.
 export const stripePublic = {
-  cle: (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? "").trim(),
+  cle: "pk_test_51UMoYAHqkxXd4KFiHRMIGJ5gZG919sr2dLxZxPZJBLaBubsGkMEvLtkhvYdwgSPA0hvj8qPByhoue0Cwfn0NHGg900IYUXV4AT",
 };
