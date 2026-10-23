@@ -7,6 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import { track } from "@vercel/analytics";
 import Logo from "@/components/Logo";
+import { IconeBanque, IconeTelephone, IconeTicket } from "@/components/Icones";
 import type { Fantome } from "@/lib/releve/types";
 import { euros } from "@/lib/questions";
 import { editeur, garantie, stripePublic } from "@/lib/site";
@@ -221,6 +222,20 @@ export default function Offre() {
         <p className="mt-3 text-center text-sm text-gris">
           Paiement sécurisé par Stripe. Fantômes ne voit jamais ta carte.
         </p>
+        <ul className="mt-5 grid grid-cols-3 gap-2 text-center text-[0.8rem] leading-snug text-gris">
+          <li className="flex flex-col items-center gap-1">
+            <IconeTicket className="text-encre" />
+            Un paiement, pas d'appli
+          </li>
+          <li className="flex flex-col items-center gap-1">
+            <IconeBanque className="text-encre" />
+            Aucune connexion à ta banque
+          </li>
+          <li className="flex flex-col items-center gap-1">
+            <IconeTelephone className="text-encre" />
+            Ton relevé reste sur ton téléphone
+          </li>
+        </ul>
       </div>
 
       {/* 7. Les quatre questions */}

@@ -1,6 +1,18 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import { site } from "@/lib/site";
+import {
+  IconeLoupe,
+  IconeLettre,
+  IconePiece,
+  IconeBanque,
+  IconeTelephone,
+  IconeTicket,
+  IconeMain,
+  IconeBalance,
+  IconeOeil,
+  Pastille,
+} from "@/components/Icones";
 
 const lignes = [
   { date: "02/09", libelle: "PRLV SEPA APPLI MUSIQUE", montant: "−7,99", fantome: true },
@@ -10,18 +22,44 @@ const lignes = [
   { date: "11/09", libelle: "PRLV SEPA OPTION ASSURANCE", montant: "−4,50", fantome: true },
 ];
 
+const differences = [
+  {
+    icone: <IconeBanque />,
+    titre: "Sans connecter ta banque",
+    texte: "Pas d'identifiants à donner, pas d'accès permanent à ton compte. Tu déposes un relevé, c'est tout.",
+  },
+  {
+    icone: <IconeTelephone />,
+    titre: "Ton relevé reste chez toi",
+    texte: "Il est lu directement sur ton téléphone, jamais envoyé ni conservé.",
+  },
+  {
+    icone: <IconeMain />,
+    titre: "Aucune offre à te placer",
+    texte: "Pas de box, d'énergie ou d'assurance à te placer. Fantômes ne gagne rien si tu changes de fournisseur.",
+  },
+  {
+    icone: <IconeTicket />,
+    titre: "Un seul paiement",
+    texte: "Pas d'appli à installer, pas de compte à créer, pas d'abonnement obligatoire.",
+  },
+];
+
 const benefices = [
   {
+    icone: <IconeLoupe />,
     titre: "Tout est repéré",
     texte:
       "Les prélèvements qui reviennent chaque mois ou chaque année, sortis de ton relevé et classés par ce qu'ils te coûtent sur l'année.",
   },
   {
+    icone: <IconeLettre />,
     titre: "La lettre est prête",
     texte:
       "Pour chaque abonnement, une lettre de résiliation à envoyer telle quelle. Tu n'as rien à rédiger.",
   },
   {
+    icone: <IconePiece />,
     titre: "Tu vois ce que tu récupères",
     texte:
       "Le total économisé sur l'année, mis à jour à chaque abonnement que tu arrêtes.",
@@ -37,6 +75,13 @@ function BoutonCommencer() {
       <p className="mt-3 text-center text-sm text-gris">
         2 minutes · Sans connecter ta banque
       </p>
+      <Link
+        href="/exemple"
+        className="mx-auto mt-2 flex min-h-12 w-fit items-center gap-2 px-2 font-bold underline underline-offset-4"
+      >
+        <IconeOeil taille={20} />
+        Voir un exemple de résultat
+      </Link>
     </div>
   );
 }
@@ -104,13 +149,8 @@ export default function Accueil() {
         </h2>
         <ol className="mt-5 space-y-6">
           {benefices.map((b, i) => (
-            <li key={b.titre} className="flex gap-4">
-              <span
-                className="font-titre chiffres flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-encre text-lg font-semibold"
-                aria-hidden="true"
-              >
-                {i + 1}
-              </span>
+            <li key={b.titre} className="flex items-start gap-4">
+              <Pastille ton={i === 2 ? "sauge" : "vermillon"}>{b.icone}</Pastille>
               <div>
                 <h3 className="text-lg font-bold">{b.titre}</h3>
                 <p className="mt-1 text-gris">{b.texte}</p>
@@ -118,6 +158,41 @@ export default function Accueil() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* Ce qui distingue Fantômes */}
+      <section className="mt-14" aria-labelledby="titre-difference">
+        <h2 id="titre-difference" className="font-titre text-2xl font-semibold">
+          Pourquoi Fantômes est différent
+        </h2>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+          {differences.map((d) => (
+            <li key={d.titre} className="flex items-start gap-3 rounded-xl border border-trait bg-carte p-4">
+              <span className="mt-0.5 shrink-0 text-vermillon">{d.icone}</span>
+              <div>
+                <h3 className="font-bold">{d.titre}</h3>
+                <p className="mt-1 text-[0.95rem] text-gris">{d.texte}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* La loi est de ton côté */}
+      <section className="mt-14 flex items-start gap-4 rounded-xl border-2 border-sauge/40 bg-carte p-5" aria-labelledby="titre-loi">
+        <Pastille ton="sauge">
+          <IconeBalance />
+        </Pastille>
+        <div>
+          <h2 id="titre-loi" className="font-titre text-xl font-semibold">
+            La loi est de ton côté
+          </h2>
+          <p className="mt-1 text-gris">
+            Depuis juin 2023, un abonnement souscrit en ligne doit pouvoir se
+            résilier en ligne, en quelques clics. Pour les autres, la lettre
+            prête à envoyer suffit.
+          </p>
+        </div>
       </section>
 
       <section className="mt-14 rounded-xl bg-encre px-5 py-8 text-papier">

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
 import Logo from "@/components/Logo";
+import GuideBanques from "@/components/GuideBanques";
+import { IconeTelephone, IconeOeil } from "@/components/Icones";
 import { extraireTextePdf, ErreurPdf } from "@/lib/releve/pdf";
 import { lireOperations, lireCsv } from "@/lib/releve/lecture";
 import { detecter } from "@/lib/releve/detection";
@@ -144,23 +146,30 @@ function Depot() {
         Choisir mon relevé
       </label>
       <p className="mt-3 text-center text-sm text-gris">PDF ou CSV · plusieurs mois possibles</p>
+      <Link
+        href="/exemple"
+        className="mx-auto mt-2 flex min-h-12 w-fit items-center gap-2 px-2 font-bold underline underline-offset-4"
+      >
+        <IconeOeil taille={20} />
+        Pas ton relevé sous la main ? Voir un exemple
+      </Link>
 
-      <div className="mt-8 rounded-xl border border-trait bg-carte p-5">
-        <h2 className="font-bold">Ton relevé reste sur ton téléphone</h2>
-        <p className="mt-1 text-gris">
-          Le fichier est lu directement ici, dans ton navigateur. Il n'est envoyé nulle part et
-          n'est pas conservé.
-        </p>
+      <div className="mt-8 flex items-start gap-3 rounded-xl border border-trait bg-carte p-5">
+        <IconeTelephone className="mt-0.5 shrink-0 text-sauge" />
+        <div>
+          <h2 className="font-bold">Ton relevé reste sur ton téléphone</h2>
+          <p className="mt-1 text-gris">
+            Le fichier est lu directement ici, dans ton navigateur. Il n'est envoyé nulle part et
+            n'est pas conservé. Aucune connexion à ta banque.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <GuideBanques />
       </div>
 
       <div className="mt-6 space-y-4">
-        <div>
-          <h2 className="font-bold">Où trouver ton relevé ?</h2>
-          <p className="mt-1 text-gris">
-            Dans l'appli de ta banque, rubrique « Relevés » ou « Documents ». Télécharge le PDF du
-            dernier mois.
-          </p>
-        </div>
         <div>
           <h2 className="font-bold">Plus de mois, plus de fantômes</h2>
           <p className="mt-1 text-gris">
