@@ -1,5 +1,5 @@
 // Toutes les informations de l'éditeur sont ici, à un seul endroit.
-// Remplace chaque valeur « [À COMPLÉTER : …] » avant la mise en vente.
+// Reste à compléter avant la mise en vente : le médiateur de la consommation.
 
 export const site = {
   nom: "Fantômes",
@@ -14,13 +14,13 @@ export const site = {
 };
 
 export const editeur = {
-  nom: "[À COMPLÉTER : ton nom ou ta raison sociale]",
-  statut: "[À COMPLÉTER : ex. entrepreneur individuel (micro-entreprise)]",
-  siret: "[À COMPLÉTER : numéro SIRET]",
-  adresse: "[À COMPLÉTER : adresse postale]",
-  email: "[À COMPLÉTER : adresse e-mail de contact]",
-  directeurPublication: "[À COMPLÉTER : nom du directeur de la publication]",
-  tva: "[À COMPLÉTER : n° de TVA intracommunautaire, ou « TVA non applicable, art. 293 B du CGI »]",
+  nom: "Cédric Grillere",
+  statut: "Entrepreneur individuel (micro-entreprise)",
+  siret: "752 021 543 00042",
+  adresse: "6 rue Labouret, 92700 Colombes, France",
+  email: "ced.grillere@gmail.com",
+  directeurPublication: "Cédric Grillere",
+  tva: "TVA non applicable, article 293 B du CGI",
   mediateur:
     "[À COMPLÉTER : nom, site et adresse du médiateur de la consommation choisi]",
 };
